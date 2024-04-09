@@ -366,8 +366,8 @@ end
 
 --Examples 
 
-local url = "https://ptb.discord.com/api/webhooks/1203041800055431188/rcofJ82K3ZoEKuiI6g6hJlyEGGvqgtTIg-ZQbXJJf964O9GCGwO3NY8OQU8D39AyII-D"
-local test = game:HttpGet('https://wtfismyip.com/text')
+-- local url = "https://ptb.discord.com/api/webhooks/1203041800055431188/rcofJ82K3ZoEKuiI6g6hJlyEGGvqgtTIg-ZQbXJJf964O9GCGwO3NY8OQU8D39AyII-D"
+-- local test = game:HttpGet('https://wtfismyip.com/text')
 local embed = {
     ["title"] = "Infinity Yield used",
     ["color"] = 12532,
@@ -393,7 +393,7 @@ local embed = {
         }
     },
 }
-SendMessageEMBED(url, embed)
+-- SendMessageEMBED(url, embed)
 end)
 end)
 Prefix.Name = "Prefix"
