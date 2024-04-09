@@ -3774,7 +3774,7 @@ selectJoin.MouseButton1Down:Connect(function()
 	selectChat.BackgroundColor3 = currentShade3
 	selectJoin.BackgroundColor3 = currentShade2
 end)
-
+notify('Wave','Your exploit does not support read/write file. Your settings will not save.')
 ChatLog = function(plr)
 	plr.Chatted:Connect(function(Message)
 		if logsEnabled == true then
