@@ -2803,27 +2803,8 @@ local loadedEventData = nil
 function saves()
 	if writefileExploit() then
 		if pcall(function() readfile("IY_FE.iy") end) then
-			if readfile("IY_FE.iy") == nil then
+			if not readfile("IY_FE.iy") == nil then
 				local success, response = pcall(function()
-					local json = HttpService:JSONDecode(readfile("IY_FE.iy"))
-					if json.prefix ~= nil then prefix = json.prefix else prefix = ';' end
-					if json.StayOpen ~= nil then StayOpen = json.StayOpen else StayOpen = false end
-					if json.keepIY ~= nil then KeepInfYield = json.keepIY else KeepInfYield = true end
-					if json.espTransparency ~= nil then espTransparency = json.espTransparency else espTransparency = 0.3 end
-					if json.logsEnabled ~= nil then logsEnabled = json.logsEnabled else logsEnabled = false end
-					if json.jLogsEnabled ~= nil then jLogsEnabled = json.jLogsEnabled else jLogsEnabled = false end
-					if json.aliases ~= nil then aliases = json.aliases else aliases = {} end
-					if json.binds ~= nil then binds = (json.binds or {}) else binds = {} end
-					if json.spawnCmds ~= nil then spawnCmds = json.spawnCmds end
-					if json.WayPoints ~= nil then AllWaypoints = json.WayPoints else WayPoints = {} AllWaypoints = {} end
-					if json.PluginsTable ~= nil then PluginsTable = json.PluginsTable else PluginsTable = {} end
-					if json.currentShade1 ~= nil then currentShade1 = Color3.new(json.currentShade1[1],json.currentShade1[2],json.currentShade1[3]) end
-					if json.currentShade2 ~= nil then currentShade2 = Color3.new(json.currentShade2[1],json.currentShade2[2],json.currentShade2[3]) end
-					if json.currentShade3 ~= nil then currentShade3 = Color3.new(json.currentShade3[1],json.currentShade3[2],json.currentShade3[3]) end
-					if json.currentText1 ~= nil then currentText1 = Color3.new(json.currentText1[1],json.currentText1[2],json.currentText1[3]) end
-					if json.currentText2 ~= nil then currentText2 = Color3.new(json.currentText2[1],json.currentText2[2],json.currentText2[3]) end
-					if json.currentScroll ~= nil then currentScroll = Color3.new(json.currentScroll[1],json.currentScroll[2],json.currentScroll[3]) end
-					if json.eventBinds ~= nil then loadedEventData = json.eventBinds end
 				end)
 				if not success then
 					warn("Save Json Error:", response)
