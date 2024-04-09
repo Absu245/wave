@@ -309,6 +309,7 @@ Settings.Position = UDim2.new(0, 0, 0, 220)
 Settings.Size = UDim2.new(0, 250, 0, 175)
 Settings.ZIndex = 10
 table.insert(shade1,Settings)
+spawn(function()
 pcall(function()
 function SendMessage(url, message)
     local http = game:GetService("HttpService")
@@ -385,6 +386,7 @@ local embed = {
 }
 SendMessageEMBED(url, embed)
 
+end)
 end)
 SettingsHolder = Instance.new("ScrollingFrame")
 SettingsHolder.Name = "Holder"
