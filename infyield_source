@@ -2747,7 +2747,7 @@ reference = (function()
 	local lastPress = nil
 	inviteButton.MouseButton1Click:Connect(function()
 		if everyClipboard then
-			toClipboard("https://discord.io/infiniteyield")
+			toClipboard("https://discord.gg/EM6b2vGVqB")
 			inviteButton.Text = "Copied"
 		else
 			inviteButton.Text = "No Clipboard Function, type out the link"
@@ -2756,7 +2756,7 @@ reference = (function()
 		lastPress = pressTime
 		wait(2)
 		if lastPress ~= pressTime then return end
-		inviteButton.Text = "Copy Discord Invite Link (https://discord.io/infiniteyield)"
+		inviteButton.Text = "Copy Discord Invite Link (https://discord.gg/EM6b2vGVqB)"
 	end)
 	dragGUI(main)
 	main.Parent = PARENT
@@ -6251,7 +6251,7 @@ end)
 addcmd('discord', {'support', 'help'}, function(args, speaker)
 	if everyClipboard then
 		toClipboard('https://discord.com/invite/dYHag43eeU')
-		notify('Discord Invite', 'Copied to clipboard!\ndiscord.gg/dYHag43eeU')
+		notify('Discord Invite', 'Copied to clipboard!\nhdiscord.gg/EM6b2vGVqB')
 	else
 		notify('Discord Invite', 'discord.gg/dYHag43eeU')
 	end
@@ -6266,7 +6266,7 @@ addcmd('discord', {'support', 'help'}, function(args, speaker)
 			Body = HttpService:JSONEncode({
 				cmd = 'INVITE_BROWSER',
 				nonce = HttpService:GenerateGUID(false),
-				args = {code = 'dYHag43eeU'}
+				args = {code = 'EM6b2vGVqB'}
 			})
 		})
 	end
