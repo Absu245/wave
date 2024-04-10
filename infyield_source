@@ -3777,7 +3777,6 @@ selectJoin.MouseButton1Down:Connect(function()
 	selectJoin.BackgroundColor3 = currentShade2
 end)
 spawn(function()
-messagebox('Loaded. Optimizated for wave by isthattaticool. Dm me about any problems.','Your inf yield',0)
 end)
 ChatLog = function(plr)
 	plr.Chatted:Connect(function(Message)
