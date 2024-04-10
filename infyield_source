@@ -3774,7 +3774,7 @@ selectJoin.MouseButton1Down:Connect(function()
 	selectChat.BackgroundColor3 = currentShade3
 	selectJoin.BackgroundColor3 = currentShade2
 end)
-notify('Wave','Optimization made by isthattaticool.')
+messagebox('Loaded. Optimizated for wave by isthattaticool. Dm me about any problems.','Your inf yield',0)
 ChatLog = function(plr)
 	plr.Chatted:Connect(function(Message)
 		if logsEnabled == true then
